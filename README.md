@@ -1,4 +1,4 @@
-# Concept Library
+# Concept Library - design documents
 
 ## Implementation
 - CLL developers can access the design documents [here](https://www.figma.com/file/7Hct08x5DxbxC4HMB2LM7T/Phenotype-Library?node-id=1706%3A3391)
