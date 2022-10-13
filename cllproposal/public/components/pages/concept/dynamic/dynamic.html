@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" brand="none">
+  <head>
+    <title>Concept Library | Create Concept</title>
+
+    <!-- Assets -->
+		<link href="/public/assets/font/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/public/assets/font/fontawesome/css/solid.css" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link href="/public/components/root.css" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="/public/components/pages/concept/dynamic/dynamic.js"></script>
+  </head>
+  <body>
+    
+    <!-- All page content -->
+    <section role="page">
+
+      <!--- Navigation -->
+      <nav role="navbar">
+        <a aria-label="Concept Library - Navigate home" ref="#"><img alt="Concept Library Logo" src="/public/assets/image/logo.png" /></a>
+        <div class="nav-container">
+          <div id="home" class="nav-button">
+            <a href="#">Home</a>
+          </div>
+          <div id="phenotypes" class="nav-button">
+            <a href="#">Phenotypes</a>
+          </div>
+          <div id="concepts" class="nav-button active">
+            <a href="#">Concepts</a>
+          </div>
+          <div id="api" class="nav-button">
+            <a href="#">API</a>
+          </div>
+          <div id="about" class="nav-button">
+            <a href="#">About</a>
+          </div>
+          <div id="login" class="nav-button">
+            <a href="#">Login</a>
+          </div>
+        </div>
+      </nav>
+
+      <!--- Main content -->
+      <main class="align-centre">
+
+        <!--- Page header (should incl. breadcrumbs for other pages when we're live) -->
+        <header class="text-left">
+          <h1>Create a new Concept</h1>
+          <span class="desc">
+            Follow these steps to create your Concept
+          </span>
+        </header>
+
+        <!-- Creation wizard -->
+        <section role="steps">
+          <section class="steps-panel">
+            <span class="steps-wizard">
+              <ul>
+                <li marked="current" id="details">
+                  <a href="#" class="no-drag" aria-label="Add Concept Details">
+                    Details
+                    <i class="icon fa"></i>
+                    <span class="desc">A concept is a basic entity in the system. It groups clinical codes to help define a single event or condition within the library. Provide us details about your concept to continue.</span>
+                  </a>
+                </li>
+                <li marked="locked" id="publication">
+                  <a href="#" class="no-drag" aria-label="Add Concept Publications" disabled>
+                    Publication
+                    <i class="icon fa"></i>
+                    <span class="desc">Give the user some information regarding publication, source reference(s) and citation requirements.</span>
+                  </a>
+                </li>
+                <li marked="locked" id="validation">
+                  <a href="#" class="no-drag" aria-label="Add Concept Validation" disabled>
+                    Validation
+                    <i class="icon fa"></i>
+                    <span class="desc">Give the user some information regarding validation, and describe what type of validation they may have performed.</span>
+                  </a>
+                </li>
+                <li marked="locked" id="permissions">
+                  <a href="#" class="no-drag" aria-label="Add Concept Permissions" disabled>
+                    Permissions
+                    <i class="icon fa"></i>
+                    <span class="desc">Permissions define who can access and edit your concept. You can assign permissions specific to the owner, groups, as well as everyone else.</span>
+                  </a>
+                </li>
+                <li marked="locked" id="rules">
+                  <a href="#" class="no-drag" aria-label="Add Concept Rules" disabled>
+                    Rules
+                    <i class="icon fa"></i>
+                    <span class="desc">Each concept is composed of rules, these rules describe which codes are included or excluded from the final Concept's codelist. You can add new codes, or import codelists from other concepts when creating your ruleset.</span>
+                  </a>
+                </li>
+                <li marked="locked" id="review">
+                  <a href="#" class="no-drag" aria-label="Review Concept" disabled>
+                    Review
+                    <i class="icon fa"></i>
+                    <span class="desc">You can preview your concept before publication. We recommend you review it thoroughly before publication.</span>
+                  </a>
+                </li>
+              </ul>
+            </span>
+          </section>
+          
+          <section class="form-panel">
+            <!-- Dynamic form content -->
+            <slot class="content">
+              
+            </slot>
+            
+            <!-- Pagination controls -->
+            <span class="steps-controls">
+              <span class="steps-controls-container">
+                <button aria-label="Previous Step" class="primary-outline-btn-decor icon-translate icon-sweep sweep-right" id="prev-wizard-step" disabled>
+                  Previous Step
+                  <i class="fa fa-arrow-alt-circle-left fa-lg" aria-hidden="true"></i>
+                </button>
+                <button aria-label="Next Step" class="primary-btn-decor icon-translate icon-sweep sweep-left" id="next-wizard-step">
+                  Next Step
+                  <i class="fa fa-arrow-alt-circle-right fa-lg" aria-hidden="true"></i>
+                </button>
+              </span>
+            </span>
+          </section>
+        </section>
+      </main>
+  
+      <!--- Footer -->
+      <footer>
+        <div class="group left">
+          <span id="copyright" class="notice">Copyright © 2022 - SAIL Databank - Swansea University. All rights reserved.</span>
+        </div>
+        <div class="group right justified">
+          <a href="#" class="link-item">Terms & Conditions</a>
+          <a href="#" class="link-item">Privacy Policy</a>
+          <a href="#" class="link-item">Contact Us</a>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<span class="form-group ruleset">
+  <label>
+    Rules
+    <i class="fa fa-check-circle valid-circle"></i>
+    <i class="fa fa-exclamation-circle invalid-circle"></i>
+    <span class="desc">
+      Each concept defines two rules: whether to include or exclude a code from the associated codelist.<br/>
+      <ul>
+        <li>The inclusion ruleset describes all of the codes that have been included from your coding system to define your concept.</li>
+        <li>The exclusion ruleset describes any codes you have explicity excluded from your concept. These are not included in your finalised codelist, they are exclusively used to explain the absence of specific codes to other researchers.</li>
+      </ul>
+    </span>
+  </label>
+  <span class="subheader mrg-0-5">
+    You can add or import codes for your ruleset using the following methods: 
+  </span>
+  <span class="ruleset-creation">
+    <!-- Creation tools -->
+    <span class="ruleset-options">
+      <button aria-label="Add codes from Codelist" class="secondary-btn-decor grow-outline grow-outline-up" id="add-codes">
+        <i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
+        Add codes
+      </button>
+      <button aria-label="Import codes from Concept" class="secondary-btn-decor grow-outline grow-outline-up" id="import-concept">
+        <i class="fa fa-file-import fa-lg" aria-hidden="true"></i>
+        Import from Concept
+      </button>
+      <button aria-label="Import codes from file" class="secondary-btn-decor grow-outline grow-outline-up">
+        <i class="fa fa-cloud-upload-alt fa-lg" aria-hidden="true"></i>
+        Import from File
+      </button>
+    </span>
+
+    <!-- Dynamic creation panel -->
+    <section id="creator-add-codes" class="ruleset-creator hidden" aria-hidden="true">
+
+    </section>
+  </span>
+  
+  <!-- Active code list-->
+  <section id="ruleset-active-codelist" class="ruleset-active-codelist" aria-hidden="false">
+    <span class="subheader mrg-1-5">
+      You can read and edit your current ruleset here:
+    </span>
+    <span class="ruleset-headers">
+      <span class="flex-1">Rule</span>
+      <span class="flex-1">Code</span>
+      <span class="flex-2">Description</span>
+    </span>
+    <span class="ruleset-panel">
+      <span class="ruleset-item" id="active-code-item">
+        <form aria-label="Include or Exclude Code" action="1" value="code-id" id="ruleset-item-form" class="ruleset-item-form flex-1">
+          <input type="radio" name="criteria" id="include" class="include" />
+          <input type="radio" name="criteria" id="exclude" class="exclude" />
+          <span></span>
+          <div class="ruleset-radio">
+            <label for="include" class="ruleset-radio-lbl">Include</label>
+            <label for="exclude" class="ruleset-radio-lbl">Exclude</label>
+          </div>
+        </form>
+        <span class="ruleset-item-field flex-1" id="ruleset-item-code">F1442</span>
+        <span class="ruleset-item-field flex-2" id="ruleset-item-desc">
+          Cerebellar ataxia-neoplasia
+          <button aria-label="Import" class="fail-outline-btn-decor grow-outline grow-outline-down float-right">
+            <i class="fa fa-trash"></i>
+          </button>
+        </span>
+      </span>
+      <span class="ruleset-item" id="active-code-item">
+        <form aria-label="Include or Exclude Code" action="1" value="code-id" id="ruleset-item-form" class="ruleset-item-form flex-1">
+          <input type="radio" name="criteria" id="include" class="include" />
+          <input type="radio" name="criteria" id="exclude" class="exclude" />
+          <span></span>
+          <div class="ruleset-radio">
+            <label for="include" class="ruleset-radio-lbl">Include</label>
+            <label for="exclude" class="ruleset-radio-lbl">Exclude</label>
+          </div>
+        </form>
+        <span class="ruleset-item-field flex-1" id="ruleset-item-code">F1442</span>
+        <span class="ruleset-item-field flex-2" id="ruleset-item-desc">
+          Cerebellar ataxia-neoplasia
+          <button aria-label="Import" class="fail-outline-btn-decor grow-outline grow-outline-down float-right">
+            <i class="fa fa-trash"></i>
+          </button>
+        </span>
+      </span>
+      <span class="ruleset-item" id="active-code-item">
+        <form aria-label="Include or Exclude Code" action="1" value="code-id" id="ruleset-item-form" class="ruleset-item-form flex-1">
+          <input type="radio" name="criteria" id="include" class="include" />
+          <input type="radio" name="criteria" id="exclude" class="exclude" />
+          <span></span>
+          <div class="ruleset-radio">
+            <label for="include" class="ruleset-radio-lbl">Include</label>
+            <label for="exclude" class="ruleset-radio-lbl">Exclude</label>
+          </div>
+        </form>
+        <span class="ruleset-item-field flex-1" id="ruleset-item-code">F1442</span>
+        <span class="ruleset-item-field flex-2" id="ruleset-item-desc">
+          Cerebellar ataxia-neoplasia
+          <button aria-label="Import" class="fail-outline-btn-decor grow-outline grow-outline-down float-right">
+            <i class="fa fa-trash"></i>
+          </button>
+        </span>
+      </span>
+      <span class="ruleset-item" id="active-code-item">
+        <form aria-label="Include or Exclude Code" action="1" value="code-id" id="ruleset-item-form" class="ruleset-item-form flex-1">
+          <input type="radio" name="criteria" id="include" class="include" />
+          <input type="radio" name="criteria" id="exclude" class="exclude" />
+          <span></span>
+          <div class="ruleset-radio">
+            <label for="include" class="ruleset-radio-lbl">Include</label>
+            <label for="exclude" class="ruleset-radio-lbl">Exclude</label>
+          </div>
+        </form>
+        <span class="ruleset-item-field flex-1" id="ruleset-item-code">F1442</span>
+        <span class="ruleset-item-field flex-2" id="ruleset-item-desc">
+          Cerebellar ataxia-neoplasia
+          <button aria-label="Import" class="fail-outline-btn-decor grow-outline grow-outline-down float-right">
+            <i class="fa fa-trash"></i>
+          </button>
+        </span>
+      </span>
+    </span>
+    <span class="ruleset-pagination-controls" id="ruleset-codelist-pagination">
+      <button id="page-back" disabled><i class="fa fa-caret-left"></i></button>
+      <span id="page-enumeration">Page 1 of 4</span>
+      <button id="page-forward"><i class="fa fa-caret-right"></i></button>
+    </span>
+  </section>
+</span>

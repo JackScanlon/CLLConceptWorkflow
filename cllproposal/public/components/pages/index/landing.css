@@ -1,0 +1,146 @@
+/************************************************************
+ *                                                          *
+ *                           Themes                         *
+ *                                                          *
+ ************************************************************/
+ :root {
+  --body-color: #282C34;
+  --text-size: 16px;
+  --text-grey-color: #3C3C3B;
+  --text-lighter-color: #d3d3d3;
+  --text-lightest-color: #fff;
+
+  --icon-light-color: #fff;
+  --icon-dark-color: #525252;
+
+  --primary-color: #475DA7;
+  --secondary-color: #EAF6F6;
+  --tertiary-color: #ADDAD9;
+
+  --success-color: #3DB28C;
+  --warning-color: #F98E2B;
+  --failure-color: #D14E55;
+  --disabled-color: #bdc2ce;
+  --highlight-color: #5abbd1;
+
+  --primary-tag-color: #3DB28C20;
+  --secondary-tag-color: #D0D3D450;
+
+  --card1-color: #45ffbc;
+  --card2-color: #FFBC45;
+  --card3-color: #85C7F2;
+  --card4-color: #F9C784;
+}
+
+/************************************************************
+ *                                                          *
+ *                            Main                          *
+ *                                                          *
+ ************************************************************/
+body {
+	font-family: "IBM Plex Sans", sans-serif;
+  font-size: var(--text-size);
+  color: var(--text-darker-color);
+  background: var(--body-color);
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  margin: 0 0 1.5rem 0;
+}
+
+h1 {
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+  color: var(--text-lightest-color);
+}
+
+h4 {
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  color: var(--text-lighter-color);
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+article {
+  --card-color: var(--card1-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	padding: 1rem 2rem;
+	border-radius: 8px;
+	color: var(--text-grey-color);
+	min-height: 200px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+	transition: 0.25s ease;
+}
+
+article.card1 {
+  --card-color: var(--card1-color);
+  background-color: var(--card-color);
+}
+
+article.card2 {
+  --card-color: var(--card2-color);
+  background-color: var(--card-color);
+}
+
+article.card3 {
+  --card-color: var(--card3-color);
+  background-color: var(--card-color);
+}
+
+article.card4 {
+  --card-color: var(--card4-color);
+  background-color: var(--card-color);
+}
+
+article:hover {
+  transform: translateY(-5px);
+}
+
+article:active {
+  box-shadow: 0 0 0 2px var(--body-color), 0 0 0 4px var(--card-color);
+}
+
+.header {
+	display: flex;
+	align-items: center;
+}
+
+.header	i {
+  font-size: 2.5em;
+}
+
+article h3 {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.375;
+  margin-left: 0.5rem;
+}
+
+article h3 span:first-child {
+  font-weight: 600;
+}
+
+article h3 span:last-child {
+  font-size: 0.825em;
+  font-weight: 200;
+}

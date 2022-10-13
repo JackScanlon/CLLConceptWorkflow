@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" brand="none">
+  <head>
+    <title>Concept Library | Create Concept</title>
+
+    <!-- Assets -->
+		<link href="/public/assets/font/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/public/assets/font/fontawesome/css/solid.css" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link href="/public/components/root.css" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="/public/components/pages/concept/static/static.js"></script>
+  </head>
+  <body>
+    
+    <!-- All page content -->
+    <section role="page">
+
+      <!--- Navigation -->
+      <nav role="navbar">
+        <a aria-label="Concept Library - Navigate home" ref="#"><img alt="Concept Library Logo" src="/public/assets/image/logo.png" /></a>
+        <div class="nav-container">
+          <div id="home" class="nav-button">
+            <a href="#">Home</a>
+          </div>
+          <div id="phenotypes" class="nav-button">
+            <a href="#">Phenotypes</a>
+          </div>
+          <div id="concepts" class="nav-button active">
+            <a href="#">Concepts</a>
+          </div>
+          <div id="api" class="nav-button">
+            <a href="#">API</a>
+          </div>
+          <div id="about" class="nav-button">
+            <a href="#">About</a>
+          </div>
+          <div id="login" class="nav-button">
+            <a href="#">Login</a>
+          </div>
+        </div>
+      </nav>
+
+      <!--- Main content -->
+      <main class="align-centre">
+
+        <!-- Static wizard -->
+        <section role="steps" class="static">
+
+          <section class="form-panel">
+
+            <!--- Page header (should incl. breadcrumbs for other pages when we're live) -->
+            <header class="text-left static">
+              <h1>Create a new Concept</h1>
+              <span class="desc">
+                Follow these steps to create your Concept
+              </span>
+            </header>
+
+            <span class="content">
+              <!-- Details -->
+              <span class="form-group">
+                <label>
+                  Concept name
+                  <i class="fa fa-check-circle valid-circle"></i>
+                  <i class="fa fa-exclamation-circle invalid-circle"></i>
+                  <span class="desc">
+                    Please name your concept. We recommend you keep it as relevant as you can.
+                  </span>
+                </label>
+                <input aria-label="Concept Name" type="text" id="concept-name" name="concept-name" class="text-input" placeholder="" minlength="3" pattern="\w{1,}.*?" required />
+              </span>
+              <span class="form-group">
+                <label>
+                  Agreement date
+                  <i class="fa fa-check-circle valid-circle"></i>
+                  <i class="fa fa-exclamation-circle invalid-circle"></i>
+                  <span class="desc">
+                    Please enter the date at which the codelist was finalised.
+                  </span>
+                </label>
+                <input aria-label="Concept Entry Date" type="date" id="concept-entry-date" name="concept-entry-date" class="date-input" value="" min="2018-01-01" max="2022-10-11" pattern="\d{4}-\d{2}-\d{2}" required>
+              </span>
+              <span class="form-group">
+                <label>
+                  Author
+                  <i class="fa fa-check-circle valid-circle"></i>
+                  <i class="fa fa-exclamation-circle invalid-circle"></i>
+                  <span class="desc">
+                    Explain why the author can differ from the owner/creator
+                  </span>
+                </label>
+                <input aria-label="Concept Author" type="text" id="concept-author" name="concept-author" class="text-input" placeholder="" pattern="\w{1,}.*?" minlength="3" required />
+              </span>
+              <span class="form-group">
+                <label>
+                  Description
+                  <i class="fa fa-check-circle valid-circle"></i>
+                  <i class="fa fa-exclamation-circle invalid-circle"></i>
+                  <span class="desc">
+                    Please provide a description of your concept. Other users will be able to access this description to better understand your concept.
+                  </span>
+                </label>
+                <textarea aria-label="Concept Description" id="concept-description" name="concept-description" class="text-area-input" rows="4" autocorrect="on" autocomplete="off" minlength="5" spellcheck="default" wrap="soft" pattern="\w{1,}.*?" required></textarea>
+              </span>
+              <span class="form-group">
+                <label>
+                  Coding System
+                  <i class="fa fa-check-circle valid-circle"></i>
+                  <i class="fa fa-exclamation-circle invalid-circle"></i>
+                  <span class="desc">
+                    Some explanation of coding systems and how this relates to a concept. Please select the coding system of your concept.
+                  </span>
+                </label>
+                <div class="selection-group">
+                  <select aria-label="Select Coding System" name="concept-coding-system" id="concept-coding-system" class="selection-input" required>
+                    <option disabled value="" selected hidden>Select</option>
+                    <option value="0">ICD-10</option>
+                    <option value="1">Read Codes V2</option>
+                    <option value="2">Read Codes V3</option>
+                    <option value="3">Med Codes</option>
+                  </select>
+                </div>
+              </span>
+              <span class="form-group">
+                <label>
+                  Tags
+                  <span class="desc">
+                    Description of what a tag is and why they should tag their concept(s)
+                  </span>
+                </label>
+                <input aria-label="Concept Tags" type="text" id="concept-tags" name="concept-tags" class="text-input" placeholder="Add Tag..." />
+              </span>
+              <span class="form-group">
+                <label>
+                  Collections
+                  <span class="desc">
+                    Description of what a collection is and why they should mark their tags with collection(s)
+                  </span>
+                </label>
+                <input aria-label="Concept Collections" type="text" id="concept-collections" name="concept-collections" class="text-input" placeholder="Add Collection..." />
+              </span>
+
+              <!-- Publication -->
+              <span class="static-divider"></span>
+              <span class="form-group">
+                <label>
+                  Publication
+                  <i class="fa fa-check-circle valid-circle"></i>
+                  <i class="fa fa-exclamation-circle invalid-circle"></i>
+                  <span class="desc">
+                    Have you, or your research group, published a paper that uses or defines this concept?
+                  </span>
+                </label>
+                <span class="radio-group">
+                  <input aria-label="Yes, I have published" type="radio" id="has-publication" name="concept-published" class="radio-input">
+                  <label for="has-publication">Yes</label>
+                  <input aria-label="No, there are no publications" type="radio" id="no-publication" name="concept-published" class="radio-input" checked>
+                  <label for="no-publication">No</label>
+                </span>
+              </span>
+              <span class="form-group">
+                <label>
+                  Publication links
+                  <span class="desc">
+                    If available, please provide URL links to the relevant publications. You can select a primary publication from the list that will be generated from your given links.
+                  </span>
+                </label>
+                <div class="text-input-button-group">
+                  <input aria-label="Publication link input" type="text" class="text-input-button-item" placeholder="e.g. https://www.doi.org/XX.XXXX/XXXXXXXXXX">
+                  <button aria-label="Add publication link" type="submit" id="submit-link" class="text-input-button">
+                    Add
+                  </button>
+                </div>
+                <div class="publication-group" aria-hidden="false">
+                  <label class="publication-desc">
+                    Your links:
+                  </label>
+                  <div class="publication-set">
+                    <div class="publication-headers">
+                      <span>Primary Publication</span>
+                      <span>Publication Links</span>
+                    </div>
+                    <div class="publication-list">
+                      <button aria-label="Select as primary publication" class="publication-item is-primary">
+                        <i class="fa fa-check-circle"></i>
+                        <a href="#">https://www.doi.org/XX.XXXX/XXXXXXXXXX</a>
+                      </button>
+                      <button aria-label="Select as primary publication" class="publication-item">
+                        <i class="fa fa-check-circle"></i>
+                        <a href="#">https://www.doi.org/XX.XXXX/XXXXXXXXXX</a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </span>
+              <span class="form-group">
+                <label>
+                  Citation requirements
+                  <span class="desc">
+                    Please define the citation requirements of this concept and its codelist
+                  </span>
+                </label>
+                <input aria-label="Concept Requirements" type="text" id="concept-citation-requirements" name="concept-citation-requirements" class="text-input" placeholder="" />
+              </span>
+              <span class="form-group">
+                <label>
+                  Source reference
+                  <span class="desc">
+                    Please define the source reference(s) of this concept
+                  </span>
+                </label>
+                <input aria-label="Concept Source Reference" type="text" id="concept-source-reference" name="concept-source-reference" class="text-input" placeholder="" />
+              </span>
+              
+              <!-- Validation -->
+              <span class="static-divider"></span>
+              <span class="form-group">
+                <label>
+                  Validation
+                  <span class="desc">
+                    Some explanation of what validation is with regard to concepts
+                  </span>
+                </label>
+                <span class="subheader mrg-1-5">
+                  Have you validated this concept?
+                </span>
+                <span class="desc grouped-item">
+                  <div class="checkbox-group">
+                    <input aria-label="Validation checkbox" id="concept-validation-checkbox" class="fill-checkbox" name="concept-validation-checkbox" type="checkbox" />
+                    <span for="checkbox" class="checkbox-label">I have performed validation</span>
+                  </div>
+                </span>
+                <span class="subheader mrg-0-5">
+                  Validation description
+                  <span class="desc">
+                    Please describe the validation you have performed, if any, for this concept:
+                  </span>
+                </span>
+                <textarea aria-label="Validation description" id="concept-validation-description" name="concept-validation-description" class="text-area-input" rows="4" autocorrect="on" autocomplete="off" spellcheck="default" wrap="soft"></textarea>
+              </span>
+
+              <!-- Permissions -->
+              <span class="static-divider"></span>
+              <span class="form-group">
+                <label>
+                  Group
+                  <span class="desc">
+                    You can set the group associated with this concept below. You are also able to set the read and write access of this concept for the specified group.
+                  </span>
+                </label>
+                <span class="subheader mrg-0-5">
+                  Select the group, if any:
+                </span>
+                <div class="selection-group">
+                  <select aria-label="Select associated group" name="concept-group" id="concept-group" class="selection-input">
+                    <option disabled value="" selected hidden>Select</option>
+                    <option value="0">ADP</option>
+                    <option value="1">HDRUK</option>
+                    <option value="2">BREATHE</option>
+                    <option value="3">SAIL</option>
+                  </select>
+                </div>
+                <span class="subheader mrg-0-5">
+                  Select their read and write access:
+                </span>
+                <span class="radio-group">
+                  <input aria-label="No group access" type="radio" id="group-no-access" name="group-access" class="radio-input" checked>
+                  <label for="group-no-access">No access</label>
+                  <input aria-label="Group able to view" type="radio" id="group-view-access" name="group-access" class="radio-input">
+                  <label for="group-view-access">Read</label>
+                  <input aria-label="Group able to edit" type="radio" id="group-edit-access" name="group-access" class="radio-input">
+                  <label for="group-edit-access">Read and write</label>
+                </span>
+              </span>
+              <span class="form-group mrg-0-5">
+                <label>
+                  All other users
+                  <i class="fa fa-check-circle valid-circle"></i>
+                  <i class="fa fa-exclamation-circle invalid-circle"></i>
+                  <span class="desc">
+                    This field describes the access all other authenticated users have, and how they can interact with your concept.
+                  </span>
+                </label>
+                <span class="radio-group">
+                  <input aria-label="No user access" type="radio" id="user-no-access" name="user-access" class="radio-input" checked>
+                  <label for="user-no-access">No access</label>
+                  <input aria-label="Users able to view" type="radio" id="user-view-access" name="user-access" class="radio-input">
+                  <label for="user-view-access">Read</label>
+                </span>
+              </span>
+
+              <!-- Rules -->
+              <span class="static-divider"></span>
+              <span class="form-group ruleset">
+                <label>
+                  Rules
+                  <i class="fa fa-check-circle valid-circle"></i>
+                  <i class="fa fa-exclamation-circle invalid-circle"></i>
+                  <span class="desc">
+                    Each concept defines two rules: whether to include or exclude a code from the associated codelist.<br/>
+                    <ul>
+                      <li>The inclusion ruleset describes all of the codes that have been included from your coding system to define your concept.</li>
+                      <li>The exclusion ruleset describes any codes you have explicity excluded from your concept. These are not included in your finalised codelist, they are exclusively used to explain the absence of specific codes to other researchers.</li>
+                    </ul>
+                  </span>
+                </label>
+                <span class="subheader mrg-0-5">
+                  You can add or import codes for your ruleset using the following methods: 
+                </span>
+                <span class="ruleset-creation">
+                  <!-- Creation tools -->
+                  <span class="ruleset-options">
+                    <button aria-label="Add codes from Codelist" class="secondary-btn-decor grow-outline grow-outline-up" id="add-codes">
+                      <i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
+                      Add codes
+                    </button>
+                    <button aria-label="Import codes from Concept" class="secondary-btn-decor grow-outline grow-outline-up" id="import-concept">
+                      <i class="fa fa-file-import fa-lg" aria-hidden="true"></i>
+                      Import from Concept
+                    </button>
+                    <button aria-label="Import codes from file" class="secondary-btn-decor grow-outline grow-outline-up">
+                      <i class="fa fa-cloud-upload-alt fa-lg" aria-hidden="true"></i>
+                      Import from File
+                    </button>
+                  </span>
+              
+                  <!-- Dynamic creation panel -->
+                  <section id="creator-add-codes" class="ruleset-creator hidden" aria-hidden="true">
+              
+                  </section>
+                </span>
+                
+                <!-- Active code list-->
+                <section id="ruleset-active-codelist" class="ruleset-active-codelist" aria-hidden="false">
+                  <span class="subheader mrg-1-5">
+                    You can read and edit your current ruleset here:
+                  </span>
+                  <span class="ruleset-headers">
+                    <span class="flex-1">Rule</span>
+                    <span class="flex-1">Code</span>
+                    <span class="flex-2">Description</span>
+                  </span>
+                  <span class="ruleset-panel">
+                    <span class="ruleset-item" id="active-code-item">
+                      <form aria-label="Include or Exclude Code" action="1" value="code-id" id="ruleset-item-form" class="ruleset-item-form flex-1">
+                        <input type="radio" name="criteria" id="include" class="include" />
+                        <input type="radio" name="criteria" id="exclude" class="exclude" />
+                        <span></span>
+                        <div class="ruleset-radio">
+                          <label for="include" class="ruleset-radio-lbl">Include</label>
+                          <label for="exclude" class="ruleset-radio-lbl">Exclude</label>
+                        </div>
+                      </form>
+                      <span class="ruleset-item-field flex-1" id="ruleset-item-code">F1442</span>
+                      <span class="ruleset-item-field flex-2" id="ruleset-item-desc">
+                        Cerebellar ataxia-neoplasia
+                        <button aria-label="Import" class="fail-outline-btn-decor grow-outline grow-outline-down float-right">
+                          <i class="fa fa-trash"></i>
+                        </button>
+                      </span>
+                    </span>
+                    <span class="ruleset-item" id="active-code-item">
+                      <form aria-label="Include or Exclude Code" action="1" value="code-id" id="ruleset-item-form" class="ruleset-item-form flex-1">
+                        <input type="radio" name="criteria" id="include" class="include" />
+                        <input type="radio" name="criteria" id="exclude" class="exclude" />
+                        <span></span>
+                        <div class="ruleset-radio">
+                          <label for="include" class="ruleset-radio-lbl">Include</label>
+                          <label for="exclude" class="ruleset-radio-lbl">Exclude</label>
+                        </div>
+                      </form>
+                      <span class="ruleset-item-field flex-1" id="ruleset-item-code">F1442</span>
+                      <span class="ruleset-item-field flex-2" id="ruleset-item-desc">
+                        Cerebellar ataxia-neoplasia
+                        <button aria-label="Import" class="fail-outline-btn-decor grow-outline grow-outline-down float-right">
+                          <i class="fa fa-trash"></i>
+                        </button>
+                      </span>
+                    </span>
+                    <span class="ruleset-item" id="active-code-item">
+                      <form aria-label="Include or Exclude Code" action="1" value="code-id" id="ruleset-item-form" class="ruleset-item-form flex-1">
+                        <input type="radio" name="criteria" id="include" class="include" />
+                        <input type="radio" name="criteria" id="exclude" class="exclude" />
+                        <span></span>
+                        <div class="ruleset-radio">
+                          <label for="include" class="ruleset-radio-lbl">Include</label>
+                          <label for="exclude" class="ruleset-radio-lbl">Exclude</label>
+                        </div>
+                      </form>
+                      <span class="ruleset-item-field flex-1" id="ruleset-item-code">F1442</span>
+                      <span class="ruleset-item-field flex-2" id="ruleset-item-desc">
+                        Cerebellar ataxia-neoplasia
+                        <button aria-label="Import" class="fail-outline-btn-decor grow-outline grow-outline-down float-right">
+                          <i class="fa fa-trash"></i>
+                        </button>
+                      </span>
+                    </span>
+                    <span class="ruleset-item" id="active-code-item">
+                      <form aria-label="Include or Exclude Code" action="1" value="code-id" id="ruleset-item-form" class="ruleset-item-form flex-1">
+                        <input type="radio" name="criteria" id="include" class="include" />
+                        <input type="radio" name="criteria" id="exclude" class="exclude" />
+                        <span></span>
+                        <div class="ruleset-radio">
+                          <label for="include" class="ruleset-radio-lbl">Include</label>
+                          <label for="exclude" class="ruleset-radio-lbl">Exclude</label>
+                        </div>
+                      </form>
+                      <span class="ruleset-item-field flex-1" id="ruleset-item-code">F1442</span>
+                      <span class="ruleset-item-field flex-2" id="ruleset-item-desc">
+                        Cerebellar ataxia-neoplasia
+                        <button aria-label="Import" class="fail-outline-btn-decor grow-outline grow-outline-down float-right">
+                          <i class="fa fa-trash"></i>
+                        </button>
+                      </span>
+                    </span>
+                  </span>
+                  <span class="ruleset-pagination-controls" id="ruleset-codelist-pagination">
+                    <button id="page-back" disabled><i class="fa fa-caret-left"></i></button>
+                    <span id="page-enumeration">Page 1 of 4</span>
+                    <button id="page-forward"><i class="fa fa-caret-right"></i></button>
+                  </span>
+                </section>
+              </span>
+            </span>
+          </section>
+        </section>
+      </main>
+  
+      <!--- Footer -->
+      <footer>
+        <div class="group left">
+          <span id="copyright" class="notice">Copyright © 2022 - SAIL Databank - Swansea University. All rights reserved.</span>
+        </div>
+        <div class="group right justified">
+          <a href="#" class="link-item">Terms & Conditions</a>
+          <a href="#" class="link-item">Privacy Policy</a>
+          <a href="#" class="link-item">Contact Us</a>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>

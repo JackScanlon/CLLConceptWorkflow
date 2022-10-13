@@ -1,0 +1,69 @@
+<span class="form-group">
+  <label>
+    Publication
+    <i class="fa fa-check-circle valid-circle"></i>
+    <i class="fa fa-exclamation-circle invalid-circle"></i>
+    <span class="desc">
+      Have you, or your research group, published a paper that uses or defines this concept?
+    </span>
+  </label>
+  <span class="radio-group">
+    <input aria-label="Yes, I have published" type="radio" id="has-publication" name="concept-published" class="radio-input">
+    <label for="has-publication">Yes</label>
+    <input aria-label="No, there are no publications" type="radio" id="no-publication" name="concept-published" class="radio-input" checked>
+    <label for="no-publication">No</label>
+  </span>
+</span>
+<span class="form-group">
+  <label>
+    Publication links
+    <span class="desc">
+      If available, please provide URL links to the relevant publications. You can select a primary publication from the list that will be generated from your given links.
+    </span>
+  </label>
+  <div class="text-input-button-group">
+    <input aria-label="Publication link input" type="text" class="text-input-button-item" placeholder="e.g. https://www.doi.org/XX.XXXX/XXXXXXXXXX">
+    <button aria-label="Add publication link" type="submit" id="submit-link" class="text-input-button">
+      Add
+    </button>
+  </div>
+  <div class="publication-group" aria-hidden="false">
+    <label class="publication-desc">
+      Your links:
+    </label>
+    <div class="publication-set">
+      <div class="publication-headers">
+        <span>Primary Publication</span>
+        <span>Publication Links</span>
+      </div>
+      <div class="publication-list">
+        <button aria-label="Select as primary publication" class="publication-item is-primary">
+          <i class="fa fa-check-circle"></i>
+          <a href="#">https://www.doi.org/XX.XXXX/XXXXXXXXXX</a>
+        </button>
+        <button aria-label="Select as primary publication" class="publication-item">
+          <i class="fa fa-check-circle"></i>
+          <a href="#">https://www.doi.org/XX.XXXX/XXXXXXXXXX</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</span>
+<span class="form-group">
+  <label>
+    Citation requirements
+    <span class="desc">
+      Please define the citation requirements of this concept and its codelist
+    </span>
+  </label>
+  <input aria-label="Concept Requirements" type="text" id="concept-citation-requirements" name="concept-citation-requirements" class="text-input" placeholder="" />
+</span>
+<span class="form-group">
+  <label>
+    Source reference
+    <span class="desc">
+      Please define the source reference(s) of this concept
+    </span>
+  </label>
+  <input aria-label="Concept Source Reference" type="text" id="concept-source-reference" name="concept-source-reference" class="text-input" placeholder="" />
+</span>

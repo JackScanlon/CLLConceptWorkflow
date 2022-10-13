@@ -1,0 +1,81 @@
+<span class="form-group">
+  <label>
+    Concept name
+    <i class="fa fa-check-circle valid-circle"></i>
+    <i class="fa fa-exclamation-circle invalid-circle"></i>
+    <span class="desc">
+      Please name your concept. We recommend you keep it as relevant as you can.
+    </span>
+  </label>
+  <input aria-label="Concept Name" type="text" id="concept-name" name="concept-name" class="text-input" placeholder="" minlength="3" pattern="\w{1,}.*?" required />
+</span>
+<span class="form-group">
+  <label>
+    Agreement date
+    <i class="fa fa-check-circle valid-circle"></i>
+    <i class="fa fa-exclamation-circle invalid-circle"></i>
+    <span class="desc">
+      Please enter the date at which the codelist was finalised.
+    </span>
+  </label>
+  <input aria-label="Concept Entry Date" type="date" id="concept-entry-date" name="concept-entry-date" class="date-input" value="" min="2018-01-01" max="2022-10-11" pattern="\d{4}-\d{2}-\d{2}" required>
+</span>
+<span class="form-group">
+  <label>
+    Author
+    <i class="fa fa-check-circle valid-circle"></i>
+    <i class="fa fa-exclamation-circle invalid-circle"></i>
+    <span class="desc">
+      Explain why the author can differ from the owner/creator
+    </span>
+  </label>
+  <input aria-label="Concept Author" type="text" id="concept-author" name="concept-author" class="text-input" placeholder="" pattern="\w{1,}.*?" minlength="3" required />
+</span>
+<span class="form-group">
+  <label>
+    Description
+    <i class="fa fa-check-circle valid-circle"></i>
+    <i class="fa fa-exclamation-circle invalid-circle"></i>
+    <span class="desc">
+      Please provide a description of your concept. Other users will be able to access this description to better understand your concept.
+    </span>
+  </label>
+  <textarea aria-label="Concept Description" id="concept-description" name="concept-description" class="text-area-input" rows="4" autocorrect="on" autocomplete="off" minlength="5" spellcheck="default" wrap="soft" pattern="\w{1,}.*?" required></textarea>
+</span>
+<span class="form-group">
+  <label>
+    Coding System
+    <i class="fa fa-check-circle valid-circle"></i>
+    <i class="fa fa-exclamation-circle invalid-circle"></i>
+    <span class="desc">
+      Some explanation of coding systems and how this relates to a concept. Please select the coding system of your concept.
+    </span>
+  </label>
+  <div class="selection-group">
+    <select aria-label="Select Coding System" name="concept-coding-system" id="concept-coding-system" class="selection-input" required>
+      <option disabled value="" selected hidden>Select</option>
+      <option value="0">ICD-10</option>
+      <option value="1">Read Codes V2</option>
+      <option value="2">Read Codes V3</option>
+      <option value="3">Med Codes</option>
+    </select>
+  </div>
+</span>
+<span class="form-group">
+  <label>
+    Tags
+    <span class="desc">
+      Description of what a tag is and why they should tag their concept(s)
+    </span>
+  </label>
+  <input aria-label="Concept Tags" type="text" id="concept-tags" name="concept-tags" class="text-input" placeholder="Add Tag..." />
+</span>
+<span class="form-group">
+  <label>
+    Collections
+    <span class="desc">
+      Description of what a collection is and why they should mark their tags with collection(s)
+    </span>
+  </label>
+  <input aria-label="Concept Collections" type="text" id="concept-collections" name="concept-collections" class="text-input" placeholder="Add Collection..." />
+</span>

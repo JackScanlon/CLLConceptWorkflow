@@ -1,0 +1,47 @@
+<span class="form-group">
+  <label>
+    Group
+    <span class="desc">
+      You can set the group associated with this concept below. You are also able to set the read and write access of this concept for the specified group.
+    </span>
+  </label>
+  <span class="subheader mrg-0-5">
+    Select the group, if any:
+  </span>
+  <div class="selection-group">
+    <select aria-label="Select associated group" name="concept-group" id="concept-group" class="selection-input">
+      <option disabled value="" selected hidden>Select</option>
+      <option value="0">ADP</option>
+      <option value="1">HDRUK</option>
+      <option value="2">BREATHE</option>
+      <option value="3">SAIL</option>
+    </select>
+  </div>
+  <span class="subheader mrg-0-5">
+    Select the group's read and write access:
+  </span>
+  <span class="radio-group">
+    <input aria-label="No group access" type="radio" id="group-no-access" name="group-access" class="radio-input" checked>
+    <label for="group-no-access">No access</label>
+    <input aria-label="Group able to view" type="radio" id="group-view-access" name="group-access" class="radio-input">
+    <label for="group-view-access">Read</label>
+    <input aria-label="Group able to edit" type="radio" id="group-edit-access" name="group-access" class="radio-input">
+    <label for="group-edit-access">Read and write</label>
+  </span>
+</span>
+<span class="form-group mrg-0-5">
+  <label>
+    All other users
+    <i class="fa fa-check-circle valid-circle"></i>
+    <i class="fa fa-exclamation-circle invalid-circle"></i>
+    <span class="desc">
+      This field describes the access all other authenticated users have, and how they can interact with your concept.
+    </span>
+  </label>
+  <span class="radio-group">
+    <input aria-label="No user access" type="radio" id="user-no-access" name="user-access" class="radio-input" checked>
+    <label for="user-no-access">No access</label>
+    <input aria-label="Users able to view" type="radio" id="user-view-access" name="user-access" class="radio-input">
+    <label for="user-view-access">Read</label>
+  </span>
+</span>
